@@ -14,6 +14,7 @@ app.use(cors());
 app.use('/api/v1', router);
 require('../route/route-auth')(router);
 require('../route/route-library')(router);
+require('../route/route-oauth')(router);
 app.all('/{0}',(request, response) => ( errorHandler(new Error('Path Error. Route not found.')), response));
 
 const server = module.exports = {};
